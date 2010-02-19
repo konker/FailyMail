@@ -1,0 +1,45 @@
+
+h2 {
+    background: url(../images/FM.png) 0 0 no-repeat;
+    margin: 0;
+    padding: 0 0 4px 0;
+    border-bottom: 1px solid #666;
+    }
+    h2 a {
+        display: block;
+        text-indent: -3000px;
+        min-width: 280px;
+        min-height: 63px;
+        }
+
+#wrapper {
+    width: 320px;
+    }
+    h3#headline {
+        font-family: "Georgia", "Times New Roman", times, serif;
+        font-size: 220%;
+        font-weight: bold;
+        margin: 0 0 0 0;
+        padding: 6px 20px 0 20px;
+        }
+
+    #drivel {
+        font-size: 75%;
+        margin: 12px 0 0 0;
+        padding: 0 0 20px 0;
+        }
+        #drivel .inner {
+            padding: 0 0 0 20px;
+            overflow: auto;
+            }
+        #drivel .col1,
+        #drivel .col2,
+        #drivel .col3 {
+            width: 27%;
+            float: left;
+            ktext-align: justify;
+            }
+        #drivel .col1 { padding-right: 4%; }
+        #drivel .col3 { padding-left: 4%; }
+            
+
