@@ -156,17 +156,17 @@ var headlines = (function() {
         "england",
 
         "hard-working families",
-        "homeowners",
+        "home-owners",
         "pensioners",
         "drivers",
-        "taxpayers",
-        "taxpayers' money",
+        "tax-payers",
+        "tax-payers' money",
 
         "house prices",
         "property prices", // Hahahahahahahaa
         
         "britain's farmers",
-        "the countryside",
+        "the country-side",
 
         "british justice",
         "british sovereignty",
@@ -214,6 +214,37 @@ var headlines = (function() {
         },
 
         util: {
+            // break up words longer than n chars long using sep (default '-')
+            breakWords: function(s, n, sep) {
+                var sep = sep || '-';
+                var words = s.split(' ');
+                var ret = '';
+                for (w in words) {
+                    if (words[w].length > n) {
+                        if (words[w].indexOf(sep) != -1) {
+                            ret += words[w];
+                        }
+                        else if (words[w].length < n+3) {
+                            var i = Math.floor(words[w].length / 2);
+                            ret += words[w].substring(0, i);
+                            ret += sep;
+                            ret += words[w].substring(i);
+                        }
+                        else {
+                            ret += words[w].substring(0, n);
+                            ret += sep;
+                            ret += words[w].substring(n);
+                        }
+                        ret += ' ';
+                    }
+                    else {
+                        ret += words[w];
+                        ret += ' ';
+                    }
+                }
+                return ret;
+            },
+
             // A more random random generator
             getRandom: function(a) {
                 var n = new Array(50);

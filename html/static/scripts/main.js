@@ -4,15 +4,42 @@
 
 var main = (function() {
     return {
+        _curPage: 1,
+
         init: function() {
-            $('#refresh').unbind('click').bind('click', function() {
+            $('.refresh').bind('click', function() {
+                if (main._curPage == 1) {
+                    main._curPage = 2;
+                }
+                else {
+                    main._curPage = 1;
+                }
+
+                main.clearHeadline();
+                main.clearCopy();
+
                 main.renderHeadline();
-                return false;
+                main.renderCopy();
+
+                return true; // want to bubble to jQtouch events
             });
             main.renderHeadline();
+            main.renderCopy();
+        },
+        clearHeadline: function() {
+            $('#wrapper' + main._curPage + ' .headline').html('');
+        },
+        clearCopy: function() {
+            $('#wrapper' + main._curPage + ' .copy .col').html('');
         },
         renderHeadline: function() {
-            $('#headline').html(headlines.getHeadline());
+            $('#wrapper' + main._curPage + ' .headline').html(headlines.util.breakWords(headlines.getHeadline(), 9));
+            //$('.headline').html(headlines.getHeadline());
+        },
+        renderCopy: function() {
+            $('#wrapper' + main._curPage + ' .copy .col1').html(drivel.drivel({ maxwords: 40, maxwordlen: 12, dwords: ['dirvel'], 'break2': ' '}));
+            $('#wrapper' + main._curPage + ' .copy .col2').html(drivel.drivel({ maxwords: 40, maxwordlen: 12, dwords: ['dirvel'], 'break2': ' ', strongStart: '"', strongEnd: '"'}));
+            $('#wrapper' + main._curPage + ' .copy .col3').html(drivel.drivel({ maxwords: 40, maxwordlen: 12, dwords: ['dirvel'], 'break2': ' ', strongStart: '"', strongEnd: '"'}));
         }
     }
 })();

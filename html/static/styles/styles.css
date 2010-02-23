@@ -1,4 +1,8 @@
-
+.clr {
+    clear: both;
+    font-size: 0.1px;
+    line-height: 0;
+    }
 h2 {
     background: url(../images/FM.png) 0 0 no-repeat;
     margin: 0;
@@ -12,34 +16,70 @@ h2 {
         min-height: 63px;
         }
 
-#wrapper {
+.page {
     width: 320px;
     }
-    h3#headline {
+    h3.headline {
         font-family: "Georgia", "Times New Roman", times, serif;
-        font-size: 220%;
+        font-size: 235%;
         font-weight: bold;
         margin: 0 0 0 0;
         padding: 6px 20px 0 20px;
+        kword-break: break-all;
+        text-justify: newspaper;
         }
 
-    #drivel {
-        font-size: 75%;
+    .copy {
         margin: 12px 0 0 0;
-        padding: 0 0 20px 0;
+        padding: 0 20px 20px 0;
+        overflow: auto;
         }
-        #drivel .inner {
+        .copy .inner {
             padding: 0 0 0 20px;
-            overflow: auto;
             }
-        #drivel .col1,
-        #drivel .col2,
-        #drivel .col3 {
-            width: 27%;
-            float: left;
-            ktext-align: justify;
+        .copy strong { font-weight: bold; font-size: 110%; }
+        .copy em { font-weight: normal; font-style: italic; }
+        .copy p {
+            margin-bottom: 0.75em;
             }
-        #drivel .col1 { padding-right: 4%; }
-        #drivel .col3 { padding-left: 4%; }
+            /*
+        .copy table {
+            height: 100%;
+            text-overflow: ellipsis;
+            overflow: clip;
+            }
+            .copy table td span {
+                display: block;
+                height: 200px;
+                text-align: justify;
+                vertical-align: top;
+                margin-bottom: 20px;
+                }
+                */
+            .copy .col1,
+            .copy .col2,
+            .copy .col3 {
+                height: 20.5em;
+                font-size: 75%;
+                width: 27%;
+                float: left;
+                vertical-align: top;
+                }
+            .copy .col1 { padding-right: 6%; background: #fff; }
+            .copy .col3 { padding-left: 6%; background: #fff; }
+
+    .footer {
+        font-size: 75%;
+        padding: 0 20px;
+        }
+        .footer p {
+            margin: 0 0 0.5em 0;
+            padding: 0;
+            }
+        .footer .inner {
+            border-top: 1px solid #666;
+            margin-top: 20px;
+            padding: 10px 20px 5px 20px;
+            }
             
 
