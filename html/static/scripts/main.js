@@ -34,7 +34,6 @@ var main = (function() {
         },
         renderHeadline: function() {
             $('#wrapper' + main._curPage + ' .headline').html(headlines.util.breakWords(headlines.getHeadline(), 9));
-            //$('.headline').html(headlines.getHeadline());
         },
         renderCopy: function() {
             $('#wrapper' + main._curPage + ' .copy .col1').html(drivel.drivel({ maxwords: 40, maxwordlen: 12, dwords: ['dirvel'], 'break2': ' '}));
