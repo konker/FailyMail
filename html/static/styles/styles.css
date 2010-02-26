@@ -1,3 +1,7 @@
+body {
+    margin: 20px 0 0 0;
+    padding: 0;
+    }
 .clr {
     clear: both;
     font-size: 0.1px;
