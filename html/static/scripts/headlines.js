@@ -137,7 +137,7 @@ var headlines = (function() {
         
         new Phrase("molest","molested","molesting",""),
         new Phrase("have sex with","had sex with","having sex with",""),
-        new Phrase("impregnate", "impregnated", "impregnating", ""),
+        new Phrase("impregnate", "impregna-ted", "impregna-ting", ""),
 
         
         new Phrase("steal the identity of","stolen the identity of","stealing the identity of",""),
@@ -184,7 +184,7 @@ var headlines = (function() {
         "your house",
         "your pets",
 
-        "the conservative party",  // FAIL
+        "the conserva-tive party",  // FAIL
         "cliff richard",           // Should this be in here?
         "the memory of diana",
         "Britain's swans"          // This always stays

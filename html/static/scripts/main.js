@@ -1,4 +1,7 @@
-/*
+/**
+    Author: konker <konker@gmai.com>
+    Version: 0.1 February 26, 2010
+    License: GNU GPL v2 or later
 
 */
 
@@ -11,24 +14,9 @@ var main = (function() {
             main._isIPhone = (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i));
 
             $('.refresh').bind('click', function() {
-                /*
-                if (main._curPage == 2 || !main._isIPhone) {
-                    main._curPage = 1;
-                }
-                else {
-                    main._curPage = 2;
-                }
-                */
-
-                /*
-                main.clearHeadline();
-                main.clearCopy();
-                */
-
                 main.renderHeadline();
                 main.renderCopy();
-
-                return true; // want to bubble to jQtouch events
+                return false;
             });
             main.renderHeadline();
             main.renderCopy();
@@ -41,7 +29,7 @@ var main = (function() {
         },
         renderHeadline: function() {
             $('#wrapper' + main._curPage + ' .headline').fadeOut('fast', function() {
-                $('#wrapper' + main._curPage + ' .headline').html(headlines.util.breakWords(headlines.getHeadline(), 9)).fadeIn();
+                $('#wrapper' + main._curPage + ' .headline').html(headlines.getHeadline(), 9).fadeIn();
             });
         },
         renderCopy: function() {
@@ -54,20 +42,4 @@ var main = (function() {
         }
     }
 })();
-
-/*
-// don't let non-iphone clients try the fancy stuff
-if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
-    $.jQTouch({
-        icon: 'jqtouch.png',
-        statusBar: 'black',
-        preloadImages: [
-            'static/jqtouch/themes/konker/img/chevron_white.png',
-            'static/jqtouch/themes/konker/img/bg_row_select.gif',
-            'static/jqtouch/themes/konker/img/back_button_clicked.png',
-            'static/jqtouch/themes/konker/img/button_clicked.png'
-            ]
-    });
-}
-*/
 $(main.init);

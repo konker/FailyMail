@@ -42,26 +42,12 @@ h2 {
         .copy strong { font-weight: bold; font-size: 110%; }
         .copy em { font-weight: normal; font-style: italic; }
         .copy p {
-            margin-bottom: 0.75em;
+            margin: 0 0 0.75em 0;
             }
-            /*
-        .copy table {
-            height: 100%;
-            text-overflow: ellipsis;
-            overflow: clip;
-            }
-            .copy table td span {
-                display: block;
-                height: 200px;
-                text-align: justify;
-                vertical-align: top;
-                margin-bottom: 20px;
-                }
-                */
             .copy .col1,
             .copy .col2,
             .copy .col3 {
-                height: 20.5em;
+                height: 20.25em;
                 font-size: 75%;
                 width: 27%;
                 float: left;

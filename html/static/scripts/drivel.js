@@ -1,11 +1,9 @@
 /**
     drivel engine
     Author: konker <konker@gmai.com>
+    Version: 0.1 February 26, 2010
+    License: GNU GPL v2 or later
 
-*/
-/*
-    TODO:
-        - pictures: some kind of random placeholder?
 */
 
 var drivel = (function() {
@@ -88,11 +86,14 @@ var drivel = (function() {
                 - apply op to s
             */
 
-            var _retBuf = d[0] + b1;
+            var _retBuf = drivel.util.upperCaseFirst(d[0]) + b1;
             var lastIndex = 0;
             var str = '';
             while (lastIndex < words.length) {
                 var index = drivel.util.getRandomInt(0, mwl + 1);
+                if (index % 5) {
+                    index = 2;
+                }
                 if (lastIndex + index < words.length) {
                     str = words.substring(lastIndex, lastIndex + index);
                 }
@@ -107,22 +108,22 @@ var drivel = (function() {
                     var op = OPS[drivel.util.getRandomInt(0, OPS.length)];
                     switch (op) {
                         case 'p':
-                            ret += (ps + _retBuf + pe + "\n");
+                            ret += (ps + drivel.util.upperCaseFirst(_retBuf) + pe + "\n");
                             break;
                         case 's':
-                            ret += (ss + _retBuf + se + "\n");
+                            ret += (ss + drivel.util.upperCaseFirst(_retBuf) + se + "\n");
                             break;
                         case 'e':
-                            ret += (es + _retBuf + ee + "\n");
+                            ret += (es + drivel.util.upperCaseFirst(_retBuf) + ee + "\n");
                             break;
                         case 'ps':
-                            ret += (ps + ss + _retBuf + se + pe + "\n");
+                            ret += (ps + ss + drivel.util.upperCaseFirst(_retBuf) + se + pe + "\n");
                             break;
                         case 'pe':
-                            ret += (ps + es + _retBuf + ee + pe + "\n");
+                            ret += (ps + es + drivel.util.upperCaseFirst(_retBuf) + ee + pe + "\n");
                             break;
                         case 'se':
-                            ret += (ss + es + _retBuf + ee + se + "\n");
+                            ret += (ss + es + drivel.util.upperCaseFirst(_retBuf) + ee + se + "\n");
                             break;
                         case 'b2':
                             ret += (_retBuf + b2);
@@ -144,7 +145,10 @@ var drivel = (function() {
             // Returns a random integer between min and max
             // Using Math.round() will give you a non-uniform distribution!
             getRandomInt: function(min, max) {
-              return Math.floor(Math.random() * (max - min + 1)) + min;
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            },
+            upperCaseFirst: function(s) {
+                return s.substr(0,1).toUpperCase() + s.substr(1);
             }
         }
     }
